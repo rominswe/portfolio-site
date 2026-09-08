@@ -1,0 +1,62 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-paper);
+  background-image: 
+    url('/paper-grain.jpg'),
+    linear-gradient(180deg, #faf8f5 0%, #f6efea 60%, #faf8f5 100%);
+  background-repeat: repeat, no-repeat;
+  background-blend-mode: multiply;
+  background-attachment: fixed;
+  color: var(--text-ink);
+  font-family: var(--font-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.shell {
+  width: min(var(--max-width), calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: calc(var(--header-height) + 24px);
+  padding-bottom: 80px;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  color: var(--text-ink);
+  line-height: 1.2;
+}
+
+.kicker {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-brown);
+  margin-bottom: 12px;
+}
