@@ -31,6 +31,8 @@ jobs:
         run: npm ci
 
       - name: Build project
+        env:
+          BASE_PATH: /portfolio-site/
         run: npm run build
 
       - name: Upload artifact
