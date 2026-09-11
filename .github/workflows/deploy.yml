@@ -32,7 +32,7 @@ jobs:
 
       - name: Build project
         env:
-          BASE_PATH: /portfolio-site/
+          BASE_PATH: /
         run: npm run build
 
       - name: Upload artifact
