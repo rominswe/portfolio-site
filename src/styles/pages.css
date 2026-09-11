@@ -62,22 +62,83 @@
   gap: 12px;
 }
 
-.hero-visual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 32px;
-  background: var(--bg-paper-alt);
+.hero-profile-card {
+  background: var(--bg-card);
   border: 1px solid var(--line-color);
   border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--shadow-card);
 }
 
-.hero-illustration {
-  width: 100%;
-  max-width: 220px;
-  height: auto;
+.profile-card-header {
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line-color);
+}
+
+.profile-card-status {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: var(--accent-brown);
-  opacity: 0.85;
+}
+
+.profile-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.profile-card-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.profile-card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--accent-brown);
+  flex-shrink: 0;
+}
+
+.profile-card-title {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--text-ink);
+}
+
+.profile-external-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-ink);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.profile-external-link:hover {
+  color: var(--accent-brown);
+  text-decoration: underline;
+}
+
+.profile-card-sub {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--accent-brown);
+  margin-bottom: 2px;
+}
+
+.profile-card-desc {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  line-height: 1.45;
 }
 
 .about-summary-section {
@@ -392,3 +453,248 @@
     justify-content: center;
   }
 }
+
+/* Hero Badge & Pulsing Indicator */
+.hero-badge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-paper-alt);
+  border: 1px solid var(--line-color);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-ink);
+  margin-bottom: 16px;
+}
+
+.pulsing-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+  animation: pulseGreen 2s infinite;
+}
+
+@keyframes pulseGreen {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+.visual-badge {
+  position: absolute;
+  bottom: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-brown);
+  background: var(--bg-card);
+  padding: 4px 10px;
+  border-radius: 12px;
+  border: 1px solid var(--line-color);
+}
+
+.skills-section {
+  padding-top: 64px;
+  margin-top: 48px;
+  border-top: 1px solid var(--line-color);
+}
+
+/* Projects Filter & Search Bar */
+.projects-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  background: var(--bg-card);
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 1px solid var(--line-color);
+}
+
+.category-filter-chips {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-icon {
+  color: var(--text-muted);
+  margin-right: 4px;
+}
+
+.filter-chip {
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: var(--bg-paper);
+  border: 1px solid var(--line-color);
+  padding: 5px 14px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-chip:hover {
+  color: var(--accent-brown);
+  border-color: var(--accent-brown);
+}
+
+.filter-chip.active {
+  background: var(--accent-brown);
+  color: #ffffff;
+  border-color: var(--accent-brown);
+}
+
+.projects-search-box {
+  position: relative;
+  flex: 1;
+  max-width: 380px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+
+.projects-search-input {
+  width: 100%;
+  padding: 8px 12px 8px 34px;
+  font-size: 0.88rem;
+  border-radius: 20px;
+  border: 1px solid var(--line-color);
+  background: var(--bg-paper);
+  color: var(--text-ink);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.projects-search-input:focus {
+  border-color: var(--accent-brown);
+}
+
+.projects-results-count {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+
+.no-projects-found {
+  text-align: center;
+  padding: 64px 20px;
+  background: var(--bg-card);
+  border: 1px dashed var(--line-color-strong);
+  border-radius: 8px;
+}
+
+.no-projects-found h3 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.no-projects-found p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+/* Contact Topics & Copy Email */
+.contact-topic-selector {
+  margin-bottom: 28px;
+}
+
+.topic-prompt {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.topic-pills {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.topic-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: var(--bg-paper);
+  border: 1px solid var(--line-color);
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.topic-pill:hover {
+  border-color: var(--accent-brown);
+  color: var(--accent-brown);
+}
+
+.topic-pill.active {
+  background: var(--accent-brown);
+  color: #ffffff;
+  border-color: var(--accent-brown);
+}
+
+.contact-action-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.copy-email-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-ink);
+  background: var(--bg-paper);
+  border: 1px solid var(--line-color);
+  padding: 14px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.copy-email-btn:hover {
+  border-color: var(--accent-brown);
+  color: var(--accent-brown);
+}
+
+.copied-icon {
+  color: #22c55e;
+}
+

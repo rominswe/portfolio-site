@@ -1,6 +1,6 @@
-import { ArrowRight, Code2, Sparkles, BriefcaseBusiness, ArrowUpRight, Cpu } from 'lucide-react'
+import { ArrowRight, Code2, Sparkles, BriefcaseBusiness, ArrowUpRight, GraduationCap, Building2 } from 'lucide-react'
 import { profile, interests } from '../data/index'
-import { Button, Card, SectionHeader, GithubIcon } from '../components/ui'
+import { Button, Card, SectionHeader, GithubIcon, SkillsMatrix } from '../components/ui'
 
 function getIcon(iconName: string) {
   switch (iconName) {
@@ -19,9 +19,12 @@ export function Home() {
       <section className="hero-section shell">
         <div className="hero-grid">
           <div className="hero-content">
-            <div className="hero-meta">{profile.role}</div>
+            <div className="hero-badge-tag">
+              <span className="pulsing-dot" />
+              <span>Available for Software & AI Roles</span>
+            </div>
             <h1 className="hero-name">{profile.name}</h1>
-            <h2 className="hero-role">Data & AI Developer</h2>
+            <h2 className="hero-role">Software & Machine Learning Engineer</h2>
 
             <p className="hero-intro">{profile.intro}</p>
 
@@ -48,16 +51,61 @@ export function Home() {
             </div>
           </div>
 
-          <div className="hero-visual">
-            <Cpu className="hero-illustration" strokeWidth={1.2} size={140} />
+          <div className="hero-profile-card">
+            <div className="profile-card-header">
+              <span className="profile-card-status">Education & Industry</span>
+            </div>
+            <div className="profile-card-body">
+              <div className="profile-card-item">
+                <div className="profile-card-icon">
+                  <Building2 size={18} />
+                </div>
+                <div>
+                  <h4 className="profile-card-title">
+                    <a
+                      href="https://vitrox.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="profile-external-link"
+                    >
+                      <span>Vitrox</span>
+                      <ArrowUpRight size={13} />
+                    </a>
+                  </h4>
+                  <p className="profile-card-sub">Mar 2026 – Sep 2026</p>
+                  <p className="profile-card-desc">Workflow automation for Vision Inspection team (-80% manual processing time)</p>
+                </div>
+              </div>
+
+              <div className="profile-card-item">
+                <div className="profile-card-icon">
+                  <GraduationCap size={18} />
+                </div>
+                <div>
+                  <h4 className="profile-card-title">
+                    <a
+                      href="https://aiu.edu.my"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="profile-external-link"
+                    >
+                      <span>Albukhary International University</span>
+                      <ArrowUpRight size={13} />
+                    </a>
+                  </h4>
+                  <p className="profile-card-sub">B.Sc. Computer Science • Expected Nov 2026</p>
+                  <p className="profile-card-desc">Data Science, Deep Learning & NLP</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <section className="about-summary-section shell">
         <SectionHeader
-          kicker="01 / Background"
-          title="Building & Learning"
+          kicker="01 / Background & Focus"
+          title="Engineering & Academic Focus"
           subtitle={profile.bio}
         />
 
@@ -70,6 +118,15 @@ export function Home() {
             </Card>
           ))}
         </div>
+      </section>
+
+      <section className="skills-section shell">
+        <SectionHeader
+          kicker="02 / Technical Stack"
+          title="Technologies & Tools"
+          subtitle="A breakdown of the programming languages, frameworks, databases, and tools I have worked with across my projects and coursework."
+        />
+        <SkillsMatrix />
       </section>
     </div>
   )

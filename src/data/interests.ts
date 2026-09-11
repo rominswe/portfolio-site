@@ -7,21 +7,21 @@ export interface Interest {
 
 export const interests: Interest[] = [
   {
-    id: 'ai-ml',
+    id: 'deep-learning',
     title: 'Deep Learning & Computer Vision',
-    description: 'Developing neural network models for pattern recognition, image classification, and handwriting analysis.',
+    description: 'Developing CNN models for writer identification, sliding-window feature extraction, and image processing pipelines.',
     icon: 'Sparkles',
   },
   {
-    id: 'iot-embedded',
-    title: 'IoT & Telemetry Systems',
-    description: 'Building micro-controller telemetry platforms with ESP32, MQTT protocol, and cloud dashboards for real-time sensing.',
+    id: 'fullstack-dev',
+    title: 'Full-Stack Web & Software Automation',
+    description: 'Building modular React frontends, Express.js REST APIs, and MySQL schemas, alongside workflow automation tools developed during industrial training at ViTrox.',
     icon: 'Code2',
   },
   {
-    id: 'data-science',
-    title: 'Predictive Modeling & Healthcare AI',
-    description: 'Applying time-series analysis and machine learning algorithms for predictive healthcare forecasting and data analysis.',
+    id: 'ml-analytics',
+    title: 'Machine Learning & Time-Series Anomaly Detection',
+    description: 'Applying autoencoders and XGBoost classification on physiological dataset signals for seizure forecasting and predictive risk scoring.',
     icon: 'BriefcaseBusiness',
   },
 ]
